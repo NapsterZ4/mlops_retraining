@@ -37,6 +37,10 @@ jobs:
           dvc remote add -f data-remote s3://napster-mlops-data-versioning
           dvc remote modify data-remote region us-east-1
 
+      - name: Mark repo as safe
+        run: |
+          git config --global --add safe.directory /__w/mlops_retraining/mlops_retraining
+
       - name: Track dataset with DVC
         run: |
           VERSION=$(git tag | grep ^v | sort -V | tail -n 1 | sed 's/v//' || echo "0")
