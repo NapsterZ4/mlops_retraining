@@ -39,11 +39,9 @@ def download_from_s3(
     print("Descarga completa.")
 
 
-# 👉 Ejemplo de uso
 if __name__ == "__main__":
     BUCKET_NAME = "dataset-upload-cancer"
     S3_PREFIX = ""
     LOCAL_DIR = "./data/"
-    AWS_PROFILE = "napster"
 
-    download_from_s3(BUCKET_NAME, S3_PREFIX, LOCAL_DIR, AWS_PROFILE)
+    download_from_s3(BUCKET_NAME, S3_PREFIX, LOCAL_DIR)

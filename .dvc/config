@@ -1,0 +1,3 @@
+['remote "data-versioning"']
+    url = s3://napster-mlops-course-seccion1
+    region = us-east-1

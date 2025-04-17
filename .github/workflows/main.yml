@@ -14,6 +14,10 @@ jobs:
     container: docker://dvcorg/cml:latest
     env:
       repo_token: ${{ secrets.GITHUBTOKEN }}
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: us-east-1
+
     steps:
       - uses: actions/checkout@v2
 
@@ -23,6 +27,10 @@ jobs:
       - name: Install requirements
         run:
           pip3 install -r requirements.txt
+
+      - name: Download data from S3
+        run: |
+          python3 download_data.py
 
       - name: Execute the training model
         run: |
