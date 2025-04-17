@@ -12,7 +12,6 @@ import joblib
 # READ THE DATASET
 # --------------------------------------------
 df = pd.read_csv("data/data.csv")
-df = df.dropna()
 
 # --------------------------------------------
 # PREPROCESSING
