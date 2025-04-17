@@ -46,6 +46,8 @@ jobs:
           VERSION=$(git tag | grep ^v | sort -V | tail -n 1 | sed 's/v//' || echo "0")
           NEXT_VERSION=$((VERSION + 1))
           dvc add data/data.csv
+          git config --global user.email "jorge.zapata@protonmail.com"
+          git config --global user.name "Napster"
           git add data/data.csv.dvc .gitignore
           git commit -m "Auto-track dataset via DVC - Version v$NEXT_VERSION"
 
