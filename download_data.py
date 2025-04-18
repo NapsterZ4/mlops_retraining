@@ -41,7 +41,7 @@ def download_from_s3(
 
 if __name__ == "__main__":
     BUCKET_NAME = "dataset-upload-cancer"
-    S3_PREFIX = ""
-    LOCAL_DIR = "./data/"
+    S3_PREFIX = ""  # en caso que necesites descargar el archivo específico
+    LOCAL_DIR = "./data/"  # directorio local donde estarán los datos
 
     download_from_s3(BUCKET_NAME, S3_PREFIX, LOCAL_DIR)
